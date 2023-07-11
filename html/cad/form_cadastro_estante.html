@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/estilo kayke.css">
+</head>
+<body>
+    <div id="menu-lateral">
+    <div id="menu">Home</div>
+    <div id="menu">Cadastros</div>
+    <div id="menu">Relatórios</div>
+    <div id="menu">Gestão</div>
+
+    </div>
+    <div id="barra-superior">
+       <div class="titulo"><h1>CADASTRO DO ESTANTES</h1></div>
+    </div>
+    <div id="formulario">
+        <form action="../../php/cad/cad_estante.php" method="post">
+        <input type="text" name="estante" placeholder="Estante">
+        <input type="text" name="prateleira" placeholder="Prateleira">
+        <input class="btn" name="btncad" type="submit" value="Cadastrar">
+    </form>
+    </div>
+</body>
+</html>
