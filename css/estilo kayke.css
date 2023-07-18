@@ -19,7 +19,7 @@
   }
   #barra-superior{
     background-color: #455A64;
-    height: 90px;
+    height: 150px;
   }
   .titulo{
     display: flex;
@@ -31,7 +31,7 @@
   #menu{
     width: 150px;
     display: flex;
-    height: 70px;
+    height: 150px;
     background-color: rgb(149, 216, 179);
   }
 

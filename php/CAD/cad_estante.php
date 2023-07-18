@@ -16,5 +16,3 @@ else{
     echo "Erro ao cadastrar estante:".
     mysqli_erro($conexao);
   }
-    
-?>
