@@ -1,4 +1,12 @@
-<?php include_once("../../php/credenciais.php"); ?> 
+<?php 
+session_start();
+if (!$_SESSION["autentica"]) {
+    echo "<script>alert('Faça o login novamente!');</script>";
+    echo "<script>location.href='../../index.html';</script>";
+    # code...
+}
+include_once("../../php/credenciais.php"); 
+?> 
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -11,20 +19,26 @@
 
 
     <div id="menu-lateral">
-        <div id="menu">Homes</div>
-        <div id="menu">Cadrastros</div>
-        <div id="menu">Relatorios</div>
+        <div id="menu">Home</div>
+        <div id="menu">Cadastros</div>
+        <div id="menu">Relatórios</div>
         <div id="menu">Gestão</div>
+        <a href="../../php/CAD/sair.php">Sair</a>
     </div>
     <div id="barra-superior">
-        <div class="titulo"> <h1>CADRASTO DE MATERIAL</h1></div>
+        <div class="titulo"> <h1>CADASTRO DE MATERIAL</h1></div>
     </div>
 
 
     <div id="inputs">
         <form action="../../php/cad/cad_material.php" method="post">
-            <input type="text" name="nome_prod" placeholder="nome do produto" required>
-            <input type="number" name="quantidade" placeholder="QUANTIDADE">
+            <input type="text" name="nome_prod" placeholder="Nome do produto" required>
+            <input type="text" name="descricao" placeholder="Descrição">
+            <input type="text" name="marca" placeholder="Marca">
+            <input type="text" name="modelo" placeholder="Modelo">
+            <input type="number" name="quantidade" placeholder="Quantidade">
+            <input type="number" name="estoque_minimo" placeholder="Estoque mínimo">
+            <input type="number" name="preco" placeholder="Preço">
             <select name="unidade_medida">
                 <option value="">Selecione a unidade</option>
                 <?php
@@ -35,8 +49,7 @@
                     }
                 ?>
             </select>
-            <input type="datetime-local" name="data_cad" placeholder="">
-            <select name="categoria">
+                <select name="categoria">
                 <option value="">Selecione a categoria</option>
                 <?php
                     $sql3 = 'SELECT * FROM categorias ';
@@ -46,7 +59,6 @@
                     }
                 ?>
             </select>
-            <input type="month" name="validade" placeholder="VALIDADE">
             <select name="fornecedor">
                 <option value="">Selecione o fornecedor</option>
                 <?php
