@@ -1,4 +1,10 @@
-<?php include_once("../../php/credenciais.php"); ?> 
+<?php 
+include_once("../../php/credenciais.php"); 
+$id= $_GET['id'];
+$consulta = "SELECT * FROM materiais WHERE id_material = '$id'";
+$resultados = mysqli_query($conection, $consulta);
+while($materiais = mysqli_fetch_array($resultados)){
+?> 
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -23,8 +29,8 @@
 
     <div id="inputs">
         <form action="../../php/cad/cad_material.php" method="post">
-            <input type="text" name="nome_prod" placeholder="nome do produto" required>
-            <input type="number" name="quantidade" placeholder="QUANTIDADE">
+            <input type="text" name="nome_prod" value="<?php echo $materiais["nome"]?>" placeholder="nome do produto" required>
+            <input type="number" name="quantidade" value="<?php echo $materiais["quantidade"]?>"placeholder="QUANTIDADE">
             <select name="unidade_medida">
                 <option value="">Selecione a unidade</option>
                 <?php
@@ -73,3 +79,4 @@
 
  </body>  
 </html>
+<?php } ?>
