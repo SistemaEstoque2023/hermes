@@ -18,7 +18,7 @@
       <h4 class="h4">Acesse seus produtos<br>
         e encomendas</h4>
 
-      <button class="animated-button">ENTRAR</button>
+      <a href="../../index.html"><button class="animated-button">ENTRAR</button></a>
 
     </div>
     <div class="elementos2">
@@ -27,17 +27,17 @@
       <H2 class="h22">Criar uma conta</H2>
       <H4 class="h44">Preencha seus dados</H4>
 
-      <form class="form">
+      <form action="../../php/CAD/cad_usuario.php" class="form" method="post">
 
-        <input class="input" type="text" id="nome" name="nome" placeholder="Nome Completo" >
-
-        
-        <input class="input" type="email" id="email" name="email"placeholder="E-mail">
+        <input class="input" type="text" name="nome" id="nome" name="nome" placeholder="Nome Completo" >
 
         
-        <input class="input" type="password" id="senha" name="senha"placeholder="Senha">
+        <input class="input" type="email" name="email" id="email" name="email"placeholder="E-mail">
 
-        <input class="botao2" type="submit" value="CADASTRAR">
+        
+        <input class="input" type="password" name="senha" id="senha" name="senha"placeholder="Senha">
+
+        <input class="botao2" type="submit" name="btn_cad_usr" value="CADASTRAR">
       </form>
     </div>
 </body>

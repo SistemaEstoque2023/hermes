@@ -14,8 +14,8 @@ if (isset($_POST["btn_cad"])) {
         echo "<script>alert('CNPJ já está cadastrado!');</script>";
         echo "<script>location.href='../../html/cad/form_cadastro_fornecedor.html';</script>";
     } else {
-
-        $sql = "INSERT INTO fornecedor (nome, responsavel, email, telefone, cnpj) VALUES ('$nome', '$responsavel', '$email', '$telefone', '$cnpj')";
+ $sql = "INSERT INTO fornecedor (nome, responsavel, email, telefone, cnpj) VALUES ('$nome', '$responsavel', '$email', '$telefone', '$cnpj')";
+       
 
         if (mysqli_query($conection, $sql)) {
             echo "<script>alert('Fornecedor cadastrado com sucesso!');</script>";
